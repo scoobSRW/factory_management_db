@@ -22,11 +22,14 @@ def create_app(config_class):
     from app.blueprints.orders.routes import orders_bp
     from app.blueprints.customers.routes import customers_bp
     from app.blueprints.production.routes import production_bp
+    from app.blueprints.users.routes import users_bp
 
     app.register_blueprint(employees_bp, url_prefix='/api/employees')
     app.register_blueprint(products_bp, url_prefix='/api/products')
     app.register_blueprint(orders_bp, url_prefix='/api/orders')
     app.register_blueprint(customers_bp, url_prefix='/api/customers')
     app.register_blueprint(production_bp, url_prefix='/api/production')
+    app.register_blueprint(users_bp, url_prefix='/users')
+
 
     return app
